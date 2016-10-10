@@ -1,0 +1,286 @@
+/***********************************************\
+
+#TABLE OF CONTENTS
+
+#BASIC SETUP
+
+#GLOBAL
+
+#REUSABLE COMPONENTS
+
+#NOTIFICATIONS
+
+#PRIMARY-NAV
+
+#SECTION--USERS
+
+#SECTION--POSTS
+
+#SECTION--COMMENTS
+
+\***********************************************/
+
+
+
+
+/*------------------------------------*\
+
+#BASIC SETUP
+
+\*------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+
+
+
+/*------------------------------------*\
+
+#GLOBAL SETUP
+
+\*------------------------------------*/
+
+a {
+  color: gray;
+  text-decoration: none;
+}
+
+
+/*------------------------------------*\
+
+#RESUABLE COMPONENTS
+
+\*------------------------------------*/
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 0 80px;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  border: none;
+}
+
+label {
+  width: 100%;
+}
+
+
+
+
+/*------------------------------------*\
+
+#NOTIFICATIONS
+
+\*------------------------------------*/
+
+#error-notification {
+  margin: 10px;
+  font-size: 75%;
+  color: red;
+}
+
+
+
+
+
+/*------------------------------------*\
+
+#PRIMARY-NAV
+
+\*------------------------------------*/
+
+.primary-nav {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.primary-nav li {
+  display: inline-block;
+  border-right: 1px solid;
+  padding: 0 10px;
+}
+
+.primary-nav li:last-child {
+  border-right: none;
+}
+
+.primary-nav li a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+/*------------------------------------*\
+
+#SECTION--USERS
+
+\*------------------------------------*/
+
+.section--users {
+  background-color: white;
+  overflow: hidden;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.form-container__item {
+  float: left;
+  width: 49%;
+  border: 1px solid;
+  text-align: left;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 5px;
+}
+
+.form-container__item h2 {
+  padding-top:30px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+
+#SECTION--POSTS
+
+\*------------------------------------*/
+
+.section--posts {
+  background-color: whitesmoke;
+  padding: 5px;
+}
+
+.post-form h2 {
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+}
+
+.post-table__item td {
+  margin: 10px;
+}
+
+.post-table__item__url {
+  font-size: 60%;
+  color: gray;
+
+}
+
+.post-table__item i {
+  vertical-align: middle;
+  padding: 0 3px;
+}
+
+
+.post-table__item--upvote {
+  background-color:transparent;
+  border-color:transparent;
+}
+.post-table__item--upvote--red {
+  background-color:transparent;
+  border-color:transparent;
+  color:red;
+  cursor: not-allowed;
+}
+.post-table__item--upvote:hover {
+  color:red;
+}
+
+/*------------------------------------*\
+
+#SECTION--COMMENTS
+
+\*------------------------------------*/
+
+.comment-form__comment {
+  width: 500px;
+  height: 100px;
+}
+
+.comment-form__submit {
+  width: 200px;
+}
+
+.comment-table  td {
+  display: block;
+}
+
+.comment-table__user {
+  font-size: 80%;
+  color: gray;
+}
+
+.comment-table__content {
+  font-size: 75%;
+  color: black;
+  padding: 3px 0 10px 10px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cognoa</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if flash[:success] %>
+    <p><%= flash[:success] %></p>
+  <% end %>
+
+  <header>
+    <nav>
+      <div class="row">
+        <ul class="primary-nav">
+          <% if !current_user %>
+            <li><a href="/posts">new</a></li>
+            <li><a href="/users/new">login</a></li>
+          <% else %>
+            <li><%= current_user.first_name.upcase() %></li>
+            <li><a href="/posts">new</a></li>
+            <li>
+              <%= link_to "LOGOUT", {
+                :controller => "sessions",
+                :action     => "destroy"
+                },
+                :method     => :delete %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </nav>
+  </header>
+
+    <%= yield %>
+
+</body>
+</html>

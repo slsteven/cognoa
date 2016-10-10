@@ -1,0 +1,52 @@
+<section>
+  <div class="section--comments">
+    <div class="row">
+      <table class="post-table">
+        <tr class="post-table__item">
+          <td><i class="ion-android-arrow-dropup"></i></td>
+          <td>
+            <a href="/posts/<%= @post.id %>"><%= @post.title %></a>
+            <a href="http://<%= @post.url %>" class="post-table__item__url">(<%= @post.url %>)</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="row comment-form">
+      <form action='/comments' method='POST'>
+        <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+        <textarea type='text' name='comment[content]' class='comment-form__comment'></textarea>
+        <input type='hidden' name='post_id' value='<%= @post.id %>'></input>
+        <div class="comment-form__submit">
+          <input type='submit' class='comment-form__submit' value='add comment'></input>
+        </div>
+      </form>
+
+      <% if flash[:notice] %>
+        <% flash[:notice].each do |e| %>
+          <p id='error-notification'><%= e %></p>
+        <% end %>
+      <% end %>
+    </div>
+
+
+    <div class="row">
+      <table class="comment-table">
+        <% @comments.each do |comment| %>
+          <% if comment.content != nil %>
+            <tr>
+              <td class="comment-table__user">
+                <i class="ion-android-arrow-dropup"></i>
+                <%= comment.user.first_name %> <%= comment.user.last_name %>
+                <%= comment.created_at %>
+              </td>
+              <td class="comment-table__content"><%= comment.content %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+
+  </div>
+</section>
+
