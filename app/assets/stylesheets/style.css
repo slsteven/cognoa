@@ -232,6 +232,9 @@ label {
   padding: 0 3px;
 }
 
+.post-table__item form {
+  display: inline-block;
+}
 
 .post-table__item--upvote {
   background-color:transparent;
@@ -246,6 +249,10 @@ label {
 .post-table__item--upvote:hover {
   color:red;
 }
+
+
+
+
 
 /*------------------------------------*\
 

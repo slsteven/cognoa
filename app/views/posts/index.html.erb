@@ -18,12 +18,13 @@
     </div>
   <% end %>
 
-  <% if flash[:notice] %>
-    <% flash[:notice].each do |e| %>
-      <p id='error-notification'><%= e %></p>
+  <div class="row">
+    <% if flash[:notice] %>
+      <% flash[:notice].each do |e| %>
+        <p id='error-notification'><%= e %></p>
+      <% end %>
     <% end %>
-  <% end %>
-
+  </div>
     <div class="row">
       <table class="post-table">
         <% @posts.each do |post| %>
