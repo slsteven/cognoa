@@ -1,7 +1,7 @@
 class VotesController < ApplicationController
 
   def create
-    Vote.create(user: user, post: Post.find(params[:post_id]))
+    Vote.create(user: current_user, post: Post.find(params[:post_id]))
     redirect_to '/posts'
   end
 

@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-
-    puts "SDFS", guest_user.email
   end
 
   def create

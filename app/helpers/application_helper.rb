@@ -16,7 +16,6 @@ module ApplicationHelper
   # find guest_user object associated with the current session,
   # creating one as needed
   def guest_user
-    puts "get guest user"
     # Cache the value the first time it's gotten.
     @cached_guest_user ||=
       User.find_by!(email: (cookies.permanent.signed[:guest_user_email] ||= create_guest_user.email))
@@ -32,21 +31,17 @@ module ApplicationHelper
   # called (once) when the user logs in, insert any code your application needs
   # to hand off from guest_user to current_user.
   def logging_in
-    puts "LOGGING IN", guest_user.email
-    puts "current_user", current_user.email
-    puts "sesssion", session[:votes]
-    session[:votes].each do |vote|
-      post_id_to_be_updated = vote
-      Vote.create(user: current_user, post: Post.find(post_id_to_be_updated))
+    if session[:votes]
+      session[:votes].each do |vote|
+        post_id_to_be_updated = vote
+        Vote.create(user: current_user, post: Post.find(post_id_to_be_updated))
+      end
     end
-    redirect_to '/posts'
-    return
   end
 
   # creates guest user by adding a record to the DB
   # with a guest name and email
   def create_guest_user
-    puts "create guest user"
     u = User.create(:first_name => "guest", :email => "guest_#{Time.now.to_i}#{rand(99)}@example.com")
     u.save!(:validate => false)
     u
