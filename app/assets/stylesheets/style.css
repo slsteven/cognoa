@@ -23,6 +23,7 @@
 
 
 
+
 /*------------------------------------*\
 
 #BASIC SETUP
@@ -48,6 +49,7 @@ body {
 
 
 
+
 /*------------------------------------*\
 
 #GLOBAL SETUP
@@ -58,6 +60,9 @@ a {
   color: gray;
   text-decoration: none;
 }
+
+
+
 
 
 /*------------------------------------*\
@@ -115,6 +120,7 @@ label {
 
 
 
+
 /*------------------------------------*\
 
 #NOTIFICATIONS
@@ -161,6 +167,9 @@ label {
 }
 
 
+
+
+
 /*------------------------------------*\
 
 #SECTION--USERS
@@ -192,10 +201,6 @@ label {
   border-bottom: 1px solid;
   margin-bottom: 30px;
 }
-
-
-
-
 
 
 
@@ -240,6 +245,7 @@ label {
   background-color:transparent;
   border-color:transparent;
 }
+
 .post-table__item--upvote--red {
   background-color:transparent;
   border-color:transparent;
@@ -262,7 +268,9 @@ label {
 
 .comment-form__comment {
   width: 500px;
-  height: 100px;
+  height: 80px;
+  padding: 10px;
+  font-size: 90%;
 }
 
 .comment-form__submit {

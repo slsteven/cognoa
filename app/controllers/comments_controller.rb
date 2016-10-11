@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def create
-
     if !current_user
       flash[:errors] = ["You must be logged in"]
     else
@@ -17,7 +16,9 @@ class CommentsController < ApplicationController
   end
 
   private
-    def comment_params
-      params.require(:comment).permit(:content, :post_id)
-    end
+
+  def comment_params
+    params.require(:comment).permit(:content, :post_id)
+  end
+
 end
